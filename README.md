@@ -37,10 +37,10 @@
    </tr>
    <tr>
       <td>
-         <img src="https://github.com/DarrickFauvel/hangman-js/images/screenshot-desktop.png" width="500px" />
+         <img src="https://github.com/DarrickFauvel/hangman-js/blob/main/screenshot-desktop.png" width="500px" />
       </td>
       <td>
-         <img src="https://github.com/DarrickFauvel/hangman-js/images/screenshot-mobile.png" width="200px" />
+         <img src="https://github.com/DarrickFauvel/hangman-js/blob/main/screenshot-mobile.png" width="200px" />
       </td>
    </tr>
 </table>
