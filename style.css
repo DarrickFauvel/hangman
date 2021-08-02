@@ -17,6 +17,7 @@ body {
 h1 {
   margin: 20px 0 0;
 }
+
 .game-container {
   padding: 20px 30px;
   position: relative;
@@ -25,6 +26,7 @@ h1 {
   width: 450px;
 }
 
+/* Figure */
 .figure-container {
   fill: transparent;
   stroke: #fff;
@@ -36,6 +38,7 @@ h1 {
   display: none;
 }
 
+/* Wrong letters */
 .wrong-letters-container {
   position: absolute;
   top: 20px;
@@ -53,6 +56,7 @@ h1 {
   font-size: 24px;
 }
 
+/* Correct letters to word */
 .word {
   display: flex;
   position: absolute;
@@ -72,6 +76,7 @@ h1 {
   width: 20px;
 }
 
+/* Popup modal */
 .popup-container {
   background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
@@ -111,6 +116,7 @@ h1 {
   outline: 0;
 }
 
+/* Notification */
 .notification-container {
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 10px 10px 0 0;
