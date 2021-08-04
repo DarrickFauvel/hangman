@@ -1,14 +1,15 @@
+// Define element targets
 const wordEl = document.getElementById('word')
 const wrongLettersEl = document.getElementById('wrong-letters')
-const playAgainBtn = document.getElementById('play-button')
+const playBtn = document.getElementById('play-button')
 const popup = document.getElementById('popup-container')
 const notification = document.getElementById('notification-container')
 const finalMessage = document.getElementById('final-message')
-
 const figureParts = document.querySelectorAll('.figure-part')
 
 const words = ['application', 'programming', 'interface', 'wizard']
 
+// Randomly select a word from word choices
 let selectedWord = words[Math.floor(Math.random() * words.length)]
 
 const correctLetters = []
@@ -98,7 +99,7 @@ window.addEventListener('keydown', (e) => {
 })
 
 // Restart game and play again
-playAgainBtn.addEventListener('click', () => {
+playBtn.addEventListener('click', () => {
   // Empty arrays
   correctLetters.splice(0)
   wrongLetters.splice(0)
