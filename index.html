@@ -10,11 +10,19 @@
   <body>
     <header>
       <h1>Hangman</h1>
-      <p>Find the hidden word - Enter a letter</p>
+      <form id="category-form">
+        Select a word category:<br />
+        <select name="category" id="category-select">
+          <option value="">-- select category --</option>
+          <option value="animal names">animal names</option>
+          <option value="computer terms">computer terms</option>
+        </select>
+      </form>
     </header>
 
     <main>
-      <div class="game-container">
+      <div class="game-container" id="game-container">
+        <p>Find the hidden word - Enter a letter</p>
         <svg height="250" width="200" class="figure-container">
           <!-- Gallows -->
           <line x1="60" y1="20" x2="140" y2="20" />
@@ -54,6 +62,6 @@
 
     <footer></footer>
 
-    <script src="index.js"></script>
+    <script type="module" src="index.js"></script>
   </body>
 </html>

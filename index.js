@@ -1,4 +1,10 @@
+import { words as animalNames } from './words/animal.js'
+import { words as computerTerms } from './words/computer.js'
+
 // Define element targets
+const categoryForm = document.getElementById('category-form')
+const categorySelect = document.getElementById('category-select')
+const gameContainer = document.getElementById('game-container')
 const wordEl = document.getElementById('word')
 const wrongLettersEl = document.getElementById('wrong-letters')
 const playBtn = document.getElementById('play-button')
@@ -7,16 +13,41 @@ const notification = document.getElementById('notification-container')
 const finalMessage = document.getElementById('final-message')
 const figureParts = document.querySelectorAll('.figure-part')
 
-const words = ['application', 'programming', 'interface', 'wizard']
-
-// Randomly select a word from word choices
-let selectedWord = words[Math.floor(Math.random() * words.length)]
-
+// Set variables
+let words = []
+let selectedWord = ''
 const correctLetters = []
 const wrongLetters = []
 
+const getRandomWord = () => {
+  const randomWord = words[Math.floor(Math.random() * words.length)]
+  return randomWord
+}
+
+const selectCategory = (e) => {
+  e.preventDefault()
+  categorySelect.blur()
+
+  const selectedCategory = categorySelect.value
+
+  if (selectedCategory === 'computer terms') {
+    words = [...computerTerms]
+  } else if (selectedCategory === 'animal names') {
+    words = [...animalNames]
+  } else {
+    return
+  }
+
+  // Lowercase words
+  words = words.map((word) => word.toLowerCase())
+
+  selectedWord = getRandomWord()
+
+  displayWord()
+}
+
 // Show hidden word
-function displayWord() {
+const displayWord = () => {
   wordEl.innerHTML = `
     ${selectedWord
       .split('')
@@ -34,11 +65,12 @@ function displayWord() {
   if (innerWord === selectedWord) {
     finalMessage.innerText = 'Congratulations! You won! 😃🎉'
     popup.style.display = 'flex'
+    playBtn.focus()
   }
 }
 
 // Update the wrong letters
-function updateWrongLettersEl() {
+const updateWrongLettersEl = () => {
   // Display wrong letters
   wrongLettersEl.innerHTML = `
     ${wrongLetters.length > 0 ? '<p>Wrong</p>' : ''}
@@ -60,11 +92,12 @@ function updateWrongLettersEl() {
   if (wrongLetters.length === figureParts.length) {
     finalMessage.innerText = 'Unfortunately you lost. 😧'
     popup.style.display = 'flex'
+    playBtn.focus()
   }
 }
 
 // Show notification
-function showNotification() {
+const showNotification = () => {
   notification.classList.add('show')
 
   setTimeout(() => {
@@ -104,7 +137,7 @@ playBtn.addEventListener('click', () => {
   correctLetters.splice(0)
   wrongLetters.splice(0)
 
-  selectedWord = words[Math.floor(Math.random() * words.length)]
+  selectedWord = getRandomWord()
 
   displayWord()
 
@@ -113,4 +146,4 @@ playBtn.addEventListener('click', () => {
   popup.style.display = 'none'
 })
 
-displayWord()
+categorySelect.addEventListener('change', selectCategory)
