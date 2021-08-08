@@ -36,12 +36,15 @@ form {
   margin-top: 0.2rem;
 }
 
-.game-container {
-  padding: 20px 30px;
+#game-container {
+  /* padding: 20px 30px; */
   position: relative;
-  margin: auto;
-  height: 350px;
-  width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin: auto; */
+  /* height: 350px; */
+  width: 30rem;
 }
 
 /* Figure */
@@ -72,13 +75,14 @@ form {
 
 .wrong-letters-container span {
   font-size: 24px;
+  color: red;
 }
 
 /* Correct letters to word */
 .word {
   display: flex;
   position: absolute;
-  bottom: 10px;
+  bottom: -3rem;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -92,6 +96,16 @@ form {
   margin: 0 3px;
   height: 50px;
   width: 20px;
+}
+
+#selected-word {
+  position: absolute;
+  bottom: -8rem;
+}
+
+#selected-word .letter {
+  border: none;
+  color: greenyellow;
 }
 
 /* Popup modal */
@@ -109,11 +123,13 @@ form {
 }
 
 .popup {
-  background-color: #2980b9;
+  position: relative;
+  background-color: rgba(41, 128, 185, 0.9);
   border-radius: 5px;
   box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
   padding: 20px;
   text-align: center;
+  overflow: hidden;
 }
 
 .popup button {

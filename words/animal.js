@@ -1,5 +1,5 @@
 // Animal names
-export let words = [
+export const words = [
   'Aardvark',
   'Albatross',
   'Alligator',
