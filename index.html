@@ -9,7 +9,7 @@
   </head>
   <body>
     <header>
-      <h1>Hangman</h1>
+      <h1>HANGMAN</h1>
       <form id="category-form">
         Select a word category:<br />
         <select name="category" id="category-select">
@@ -21,22 +21,87 @@
     </header>
 
     <main>
-      <div class="game-container" id="game-container">
+      <div id="game-container">
         <p>Find the hidden word - Enter a letter</p>
         <svg height="250" width="200" class="figure-container">
           <!-- Gallows -->
-          <line x1="60" y1="20" x2="140" y2="20" />
-          <line x1="140" y1="20" x2="140" y2="50" />
-          <line x1="60" y1="20" x2="60" y2="230" />
-          <line x1="20" y1="230" x2="100" y2="230" />
+          <line
+            x1="60"
+            y1="20"
+            x2="140"
+            y2="20"
+            style="stroke: rgb(240, 240, 240)"
+          />
+          <line
+            x1="140"
+            y1="20"
+            x2="140"
+            y2="50"
+            style="stroke: rgb(240, 240, 240)"
+          />
+          <line
+            x1="60"
+            y1="20"
+            x2="60"
+            y2="230"
+            style="stroke: rgb(240, 240, 240)"
+          />
+          <line
+            x1="20"
+            y1="230"
+            x2="100"
+            y2="230"
+            style="stroke: rgb(240, 240, 240)"
+          />
 
           <!-- Figure -->
-          <circle cx="140" cy="70" r="20" class="figure-part" />
-          <line x1="140" y1="90" x2="140" y2="150" class="figure-part" />
-          <line x1="140" y1="120" x2="120" y2="100" class="figure-part" />
-          <line x1="140" y1="120" x2="160" y2="100" class="figure-part" />
-          <line x1="140" y1="150" x2="120" y2="180" class="figure-part" />
-          <line x1="140" y1="150" x2="160" y2="180" class="figure-part" />
+          <circle
+            cx="140"
+            cy="70"
+            r="20"
+            class="figure-part"
+            style="stroke: orange; stroke-width: 8"
+          />
+          <line
+            x1="140"
+            y1="90"
+            x2="140"
+            y2="150"
+            class="figure-part"
+            style="stroke: orange; stroke-width: 8"
+          />
+          <line
+            x1="140"
+            y1="120"
+            x2="120"
+            y2="100"
+            class="figure-part"
+            style="stroke: orange; stroke-width: 8"
+          />
+          <line
+            x1="140"
+            y1="120"
+            x2="160"
+            y2="100"
+            class="figure-part"
+            style="stroke: orange; stroke-width: 8"
+          />
+          <line
+            x1="140"
+            y1="150"
+            x2="120"
+            y2="180"
+            class="figure-part"
+            style="stroke: orange; stroke-width: 8"
+          />
+          <line
+            x1="140"
+            y1="150"
+            x2="160"
+            y2="180"
+            class="figure-part"
+            style="stroke: orange; stroke-width: 8"
+          />
         </svg>
 
         <div class="wrong-letters-container">
@@ -44,6 +109,7 @@
         </div>
 
         <div class="word" id="word"></div>
+        <div id="selected-word"></div>
       </div>
     </main>
 

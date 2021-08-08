@@ -1,5 +1,5 @@
 // Computer terminology
-export let words = [
+export const words = [
   'backup',
   'blog',
   'broadband',
