@@ -55,28 +55,30 @@ const selectCategory = (e) => {
   displayWord()
 
   // Keydown letter press
-  window.addEventListener('keydown', (e) => {
-    // console.log(e.keyCode)
-    if (e.keyCode >= 65 && e.keyCode <= 90) {
-      const letter = e.key
+  window.addEventListener('keypress', (e) => {
+    const typedLetter = e.key.toLowerCase()
+    const regex = /[a-z]/g
 
-      if (selectedWord.includes(letter)) {
-        if (!correctLetters.includes(letter)) {
-          correctLetters.push(letter)
+    if (regex.test(typedLetter)) {
+      if (selectedWord.includes(typedLetter)) {
+        if (!correctLetters.includes(typedLetter)) {
+          correctLetters.push(typedLetter)
 
           displayWord()
         } else {
           showNotification()
         }
       } else {
-        if (!wrongLetters.includes(letter)) {
-          wrongLetters.push(letter)
+        if (!wrongLetters.includes(typedLetter)) {
+          wrongLetters.push(typedLetter)
 
           updateWrongLettersEl()
         } else {
           showNotification()
         }
       }
+    } else {
+      return
     }
   })
 }
