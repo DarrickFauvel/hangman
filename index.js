@@ -111,7 +111,7 @@ const displayWord = () => {
 const updateWrongLettersEl = () => {
   // Display wrong letters
   wrongLettersEl.innerHTML = `
-    ${wrongLetters.length > 0 ? '<p>Wrong</p>' : ''}
+    ${wrongLetters.length > 0 ? 'Wrong: ' : ''}
     ${wrongLetters.map((letter) => `<span>${letter}</span>`).join(' ')}
   `
 
