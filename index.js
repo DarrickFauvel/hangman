@@ -55,9 +55,9 @@ const selectCategory = (e) => {
   displayWord()
 
   // Keydown letter press
-  window.addEventListener('keypress', (e) => {
+  window.addEventListener('keydown', (e) => {
     const typedLetter = e.key.toLowerCase()
-    const regex = /[a-z]/g
+    const regex = /^[a-z]$/g
 
     if (regex.test(typedLetter)) {
       if (selectedWord.includes(typedLetter)) {
