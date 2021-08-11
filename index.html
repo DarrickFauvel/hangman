@@ -9,7 +9,7 @@
   </head>
   <body>
     <header>
-      <h1>HANGMAN</h1>
+      <h1>hangman</h1>
       <form id="category-form">
         Select a word category:<br />
         <select name="category" id="category-select">
@@ -22,9 +22,10 @@
 
     <main>
       <div id="game-container">
-        <p>Find the hidden word - Enter a letter</p>
+        <p>Find the hidden word - Type a letter</p>
         <svg height="250" width="200" class="figure-container">
           <!-- Gallows -->
+          <!-- top bar -->
           <line
             x1="60"
             y1="20"
@@ -32,13 +33,15 @@
             y2="20"
             style="stroke: rgb(240, 240, 240)"
           />
+          <!-- rope -->
           <line
             x1="140"
             y1="20"
             x2="140"
-            y2="50"
+            y2="70"
             style="stroke: rgb(240, 240, 240)"
           />
+          <!-- pole -->
           <line
             x1="60"
             y1="20"
@@ -46,6 +49,7 @@
             y2="230"
             style="stroke: rgb(240, 240, 240)"
           />
+          <!-- base -->
           <line
             x1="20"
             y1="230"
@@ -55,50 +59,56 @@
           />
 
           <!-- Figure -->
-          <circle
-            cx="140"
-            cy="70"
-            r="20"
+          <!-- left arm -->
+          <line
+            x1="140"
+            y1="70"
+            x2="160"
+            y2="100"
             class="figure-part"
             style="stroke: orange; stroke-width: 8"
           />
+          <!-- body -->
           <line
-            x1="140"
-            y1="90"
+            x1="160"
+            y1="100"
+            x2="120"
+            y2="160"
+            class="figure-part"
+            style="stroke: orange; stroke-width: 8"
+          />
+          <!-- right arm -->
+          <line
+            x1="170"
+            y1="140"
+            x2="160"
+            y2="100"
+            class="figure-part"
+            style="stroke: orange; stroke-width: 8"
+          />
+          <!-- left leg -->
+          <line
+            x1="120"
+            y1="160"
+            x2="80"
+            y2="170"
+            class="figure-part"
+            style="stroke: orange; stroke-width: 8"
+          />
+          <!-- right leg -->
+          <line
+            x1="120"
+            y1="160"
             x2="140"
-            y2="150"
+            y2="190"
             class="figure-part"
             style="stroke: orange; stroke-width: 8"
           />
-          <line
-            x1="140"
-            y1="120"
-            x2="120"
-            y2="100"
-            class="figure-part"
-            style="stroke: orange; stroke-width: 8"
-          />
-          <line
-            x1="140"
-            y1="120"
-            x2="160"
-            y2="100"
-            class="figure-part"
-            style="stroke: orange; stroke-width: 8"
-          />
-          <line
-            x1="140"
-            y1="150"
-            x2="120"
-            y2="180"
-            class="figure-part"
-            style="stroke: orange; stroke-width: 8"
-          />
-          <line
-            x1="140"
-            y1="150"
-            x2="160"
-            y2="180"
+          <!-- head -->
+          <circle
+            cx="180"
+            cy="90"
+            r="15"
             class="figure-part"
             style="stroke: orange; stroke-width: 8"
           />
@@ -124,6 +134,16 @@
     <!-- Notification -->
     <div class="notification-container" id="notification-container">
       <p>You have already entered this letter</p>
+    </div>
+
+    <!-- Nameplate -->
+    <div class="nameplate">
+      <p>
+        Created by
+        <span class="author">Darrick Fauvel</span>
+        using
+        <span class="stack">HTML / CSS / JavaScript / SVG</span>
+      </p>
     </div>
 
     <footer></footer>
